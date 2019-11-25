@@ -2,13 +2,17 @@ import React from 'react';
 import Hello from './Hello';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import mdx from './Hello.mdx';
 
 export default {
   title: 'components|basic/Hello',
   component: Hello,
   decorators: [withKnobs],
   parameters: {
-    componentSubtitle: '"안녕하세요"라고 보여주는 컴포넌트'
+    componentSubtitle: '"안녕하세요"라고 보여주는 컴포넌트',
+    docs: {
+      page: mdx
+    }
   }
 };
 
