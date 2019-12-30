@@ -12,7 +12,7 @@ export type IconProps = {
   className?: string;
 };
 
-const Icon = ({ icon, color, size, className }: IconProps) => {
+const IconEx = ({ icon, color, size, className }: IconProps) => {
   const SVGIcon = icons[icon];
   return (
     <SVGIcon
@@ -22,4 +22,4 @@ const Icon = ({ icon, color, size, className }: IconProps) => {
   );
 };
 
-export default Icon;
+export default IconEx;
