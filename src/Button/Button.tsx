@@ -7,7 +7,7 @@ type ButtonProps = {
   /** 클릭했을 때 호출할 함수 */
   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
   /** 버튼의 생김새를 설정합니다. */
-  theme: "primary" | "secondary" | "tertiary";
+  theme: "primary" | "secondary" | "default";
   /** 버튼의 크기를 설정합니다 */
   size: "small" | "medium" | "big";
   /** 버튼을 비활성화 시킵니다. */
@@ -56,10 +56,10 @@ const style = css`
   box-sizing: border-box;
   height: 2rem;
   font-size: 0.875rem;
-  padding: 0 1rem;
+  padding: 6 16px;
   border-radius: 0.25rem;
-  line-height: 1;
-  font-weight: 600;
+  line-height: 1.75;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -77,40 +77,46 @@ const style = css`
 
 const themes = {
   primary: css`
-    background: #20c997;
-    color: white;
+    background: #90caf9;
+    color: #000;
     svg {
       fill: white;
     }
     &:hover {
-      background: #38d9a9;
+      background: #77b1e0;
     }
     &:active {
-      background: #12b886;
+      background: #77b1e0;
     }
     &:disabled {
       background: #aed9cc;
     }
   `,
   secondary: css`
-    background: #e9ecef;
+    background: #f48fb1;
     color: #343a40;
     svg {
       fill: #343a40;
     }
     &:hover {
-      background: #f1f3f5;
+      background: #de7699;
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     }
     &:active {
-      background: #dee2e6;
+      background: #de7699;
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     }
     &:disabled {
       color: #c6d3e1;
     }
   `,
-  tertiary: css`
-    background: none;
-    color: #20c997;
+  default: css`
+    background: #e0e0e0;
+    color: #000;
     svg {
       fill: #20c997;
     }
